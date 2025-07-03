@@ -10,6 +10,7 @@ CREATE OR ALTER WAREHOUSE QUICKSTART_WH
 CREATE OR ALTER DATABASE QUICKSTART_COMMON;
 
 
+
 -- API integration is needed for GitHub integration
 CREATE OR REPLACE API INTEGRATION git_api_integration
   API_PROVIDER = git_https_api
@@ -23,7 +24,10 @@ CREATE OR REPLACE GIT REPOSITORY quickstart_common.public.quickstart_repo
   ORIGIN = 'https://github.com/VidyaMuninarayana/sfguide-getting-started-with-snowflake-devops'; -- INSERT URL OF FORKED REPO HERE
 
 
-CREATE OR ALTER DATABASE QUICKSTART_PROD;
+--CREATE OR ALTER DATABASE QUICKSTART_PROD;
+CREATE OR ALTER DATABASE QUICKSTART_{{environment}}; 
+
+
 
 
 -- To monitor data pipeline's completion
